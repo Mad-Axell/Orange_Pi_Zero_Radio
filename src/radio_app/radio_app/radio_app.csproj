@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A823D16-F96D-491D-A403-1CC6624F126D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>radio_app</RootNamespace>
+    <AssemblyName>radio_app</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="HidSharp">
+      <HintPath>bin\Debug\HidSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="ScreenManager.cs" />
+    <Compile Include="Pages\ScreenPage.cs" />
+    <Compile Include="Pages\HomePage.cs" />
+    <Compile Include="Pages\PageTable.cs" />
+    <Compile Include="Pages\TorchPage.cs" />
+    <Compile Include="Pages\StationSelectPage.cs" />
+    <Compile Include="Pages\BootLogoPage.cs" />
+    <Compile Include="BitFont.cs" />
+    <Compile Include="Pages\TimeoutPage.cs" />
+    <Compile Include="Pages\StationInfoPage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
